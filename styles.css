@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap');
+
+:root{
+    --shadow: 3px 3px 5px rgba(0,0,0,0.5);
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+    background-color: white;
+}
+
+img{
+    box-shadow: var(--shadow);
+}
+
+.container{
+    position: relative;
+    width: 80%;
+    max-width: 800px;
+    padding: 150px 50px;
+}
+
+.slide{
+    display: none;
+}
+
+.slide.active{
+    display: flex;
+}
+
+
+.slide .left-column{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: center;
+    align-items: flex-start;
+    background: url(images/pattern-quotes.svg);
+    background-repeat: no-repeat;
+    background-position-x: 50%;
+}
+
+    .slide .left-column p{
+        width: 90%;
+        margin-left: 20%;
+        font-size: 1.2rem;
+        line-height: 1.5;
+        font-family: inherit;
+        position: relative;
+        z-index: 2;
+    }
+
+    .slide .left-column .info{
+        margin-left: 20%;
+    }
+
+    .slide .left-column .info span{
+        font-size: 0.8rem;
+        color: rgb(126, 123, 123);
+    }
+
+.slide .right-column{
+    position: relative;
+}
+
+.slide .right-column img{
+    width: 350px;
+    box-shadow: var(--shadow);
+    position: relative;
+}
+
+.slide .right-column::after{
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: -40px;
+    left: 0;
+    right: -50px;
+    bottom: -50px;
+    background: url(images/pattern-bg.svg);
+    background-repeat: no-repeat;
+    background-position: 100% 100%;
+    background-size: 120%;
+}
+
+@media (min-width:764px){
+    
+
+    .container .buttons{
+        position: absolute;
+        bottom: 20%;
+        right: 30%;
+        padding: 10px;
+        z-index: 99;
+        border-radius: 3cm;
+        background-color: white;
+        box-shadow: var(--shadow);
+    }
+}
+
+.container .buttons button{
+    border: 0;
+    font-size: 1rem;
+    color: rgb(126, 123, 123);
+    cursor: pointer;
+    margin: 0 10px;
+    background-color: transparent;
+}
+
+    .container .buttons button:hover{
+        color: black;
+    }
+
+.top-column{
+    display: none;
+    position: relative;
+}
+
+.top-column img{
+    width: 350px;
+    position: relative;
+}
+
+.top-column::after{
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: -40px;
+    left: 0;
+    right: -50px;
+    bottom: -50px;
+    background: url(images/pattern-bg.svg);
+    background-repeat: no-repeat;
+    background-position: 30% 30%;
+    background-size: 60%;
+}
+
+.top-column .top-buttons{
+    display: none;
+}
+
+.attribution{
+    padding: 50px;
+    font-size: 0.7rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.attribution-text{
+    line-height: 2.5;
+    text-align: center;
+}
+
+.attribution-text a{
+    text-decoration: none;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: slateblue;
+    color: white;
+    box-shadow: var(--shadow);
+}
+
+    .attribution-text a:hover{
+        transform: scale(0.95);
+    }
+
+
+@media screen and (max-width:764px) {
+
+    .right-column{
+        display: none;
+    }
+
+    .top-column{
+        display: block;
+        position: relative;
+        text-align: center;
+    }
+
+    .top-column img{
+        width: 50%;
+    }
+    .slide{
+        flex-direction: column;
+        width: 90%;
+        gap: 40px;
+        margin: auto;
+    }
+
+    .slide .left-column{
+        text-align: justify;
+        align-items: center;
+    }
+
+    .slide .left-column :is(p, .info){
+        margin-left: 0;
+    }
+
+    .slide .left-column .info{
+        text-align: center;
+        width: 100%;
+    }
+
+    .buttons{
+        display: none;
+    }
+
+    .top-column .top-buttons{
+        display: block;
+        position: absolute;
+        left: 40%;
+        bottom: -7px;
+        padding: 5px;
+        z-index: 99;
+        border-radius: 3cm;
+        background-color: white;
+        box-shadow: var(--shadow);
+    }
+
+    .container .buttons button{
+        font-size: 0.8rem;
+        margin: 5px;
+    }
+
+}
