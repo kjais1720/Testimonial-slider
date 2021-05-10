@@ -25,7 +25,7 @@ img{
 
 .container{
     position: relative;
-    width: 80%;
+    width: 100%;
     max-width: 800px;
     padding: 150px 50px;
 }
@@ -62,6 +62,7 @@ img{
 
     .slide .left-column .info{
         margin-left: 20%;
+        color: hsl(240, 38%, 20%);
     }
 
     .slide .left-column .info span{
@@ -141,8 +142,8 @@ img{
     bottom: -50px;
     background: url(images/pattern-bg.svg);
     background-repeat: no-repeat;
-    background-position: 30% 30%;
-    background-size: 60%;
+    background-position: 30% 100%;
+    background-size: 80%;
 }
 
 .top-column .top-buttons{
@@ -188,12 +189,12 @@ img{
     }
 
     .top-column img{
-        width: 50%;
+        width: 60%;
     }
     .slide{
         flex-direction: column;
         width: 90%;
-        gap: 40px;
+        gap: 50px;
         margin: auto;
     }
 
